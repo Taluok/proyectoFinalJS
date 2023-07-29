@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakerHub : La Meca de las Zapatillas Jordan</title>
+    <!--Link Css-->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!--Link FontAwesome cdnjs-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div class="wrapper">
+        <aside>
+            <header>
+                <h1 class="logo">SneakerHub</h1>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li><a class="botonMenu botonCategoria active" href="./index.html"><i class="fas fa-arrow-right"></i>  INICIO</a></li>
+                    <li><a id="todos" class="botonMenu botonCategoria" href="#"><i class="fas fa-arrow-right"></i>  TODOS LOS PRODUCTOS</a></li>
+                    <li><a  id="nuevos" class="botonMenu botonCategoria" href="#"><i class="fas fa-arrow-right"></i>  NUEVOS SNEAKERS</a></li>
+                    <li><a id="pantalones"class="botonMenu botonCategoria" href="#"><i class="fas fa-arrow-right"></i>  OTROS PRODUCTOS JORDAN</a></li>
+                    <li><a class="botonCarrito botonMenu" href="./carrito.html"><i class="fas fa-cart-shopping"></i>  CARRITO <span id=numero class="numero">0</span></a></li>
+                </ul>
+            </nav>
+            
+            <footer>
+                <p class="textoFooter">2023 SneakerHub</p>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="tituloPrincipal" id="tituloPrincipal">TODOS LOS PRODUCTOS</h2>
+            <div id=contenedorProductos class="contenedorProductos">
+            <!--Aca trae los productos el JS-->
+            </div>
+        </main>
+    </div>
+    <!-- Script de SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Script JS -->
+    <script src="./JS/app.js"></script>
+</body>
+</html>

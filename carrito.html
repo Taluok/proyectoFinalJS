@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!--Link FontAwesome cdnjs-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside>
+            <header>
+                <h1 class="logo">SneakerHub</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="botonVolver botonMenu" href="./todosLosProductos.html">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>SEGUIR COMPRANDO
+                        </a>
+                    </li>
+                    <li>
+                        <a class="botonCarrito botonMenu active" href="./carrito.html">
+                            <i class="fa-solid fa-cart-shopping"></i>CARRITO
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="textoFooter">2023 SneakerHub</p>
+            </footer>
+        </aside>
+        <main>
+            <div class="carrito">
+                <h2 class="tituloPrincipal">TU CARRITO</h2>
+                <div class="contenedorCarrito">
+                    <p id=carritoVacio class="carritoVacio">Tu carrito esta vacio <i class="fa-solid fa-face-surprise"></i></p>
+                    <div id="carritoProductos" class="carritoProductos disabled" >
+                        <!--Aqui lo completa el js-->
+                    </div>
+                    
+                    <div id="carritoAcciones" class="carritoAcciones disabled">
+                        <div class="carritoAccionesIzq">
+                            <button id="carritoAccionesVaciar" class="carritoAccionesVaciar"> VACIAR CARRITO</button>
+                        </div>
+                        <div class="carritoAccionesDer">
+                            <div class="carritoAccionesTotal">
+                                <p>Total:</p>
+                                <p id="total">$3000</>
+                            </div>
+                            <button class="carritoAccionesComprar">COMPRAR</button>
+                        </div>
+                    </div>
+                    <p id="carritoComprado" class="carritoComprado disabled">Gracias por tu compra ! <i class="fa-regular fa-face-smile"></i></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Script de SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Script JS -->
+    <script src="./JS/carrito.js"></script>
+</body>
+
+</html>

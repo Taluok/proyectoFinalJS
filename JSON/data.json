@@ -1,0 +1,219 @@
+[
+    {
+        "id": 1,
+        "nombre": "Air Jordan 1 Zoom Air CMFT 2",
+        "precio": 63.000,
+        "color": "Gris/Blanco",
+        "imagen": [
+            "Assent/04f8fd59-76b9-4dec-bb4a-0762a61d42db.webp"
+        ],
+        "talla": [
+            "US 7",
+            "US 8",
+            "US 9",
+            "US 10",
+            "US 11"
+        ],
+        "existencias": 15,
+        "categoria": { 
+        "nombre" : "Sneakers", "id": "todos" 
+        },
+        "etiquetas": [
+            "CMFT",
+            "AIR",
+            "Nike"
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Tatum 1 Pink Lemonade",
+        "precio": 60.000,
+        "color": "Verde/Rosado",
+        "imagen": [
+            "Assent/c48625b1-ba66-44fd-a90e-8f213efc4197.webp"
+        ],
+        "talla": [
+            "US 7",
+            "US 8",
+            "US 9",
+            "US 10",
+            "US 11"
+        ],
+        "existencias": 10,
+        "categoria": { 
+        "nombre" : "Sneakers", "id": "todos" 
+        },
+        "etiquetas": [
+            "TULUM",
+            "AIR",
+            "Nike"
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Jordan Why Not .6",
+        "precio": 83.000,
+        "color": "Rojo/Blanco",
+        "imagen": [
+            "Assent/30e8a9cb-09fd-4b17-9d2a-46c62024cf96.webp"
+        ],
+        "talla": [
+            "US 7",
+            "US 9",
+            "US 10",
+            "US 11"
+        ],
+        "existencias": 17,
+        "categoria": { 
+        "nombre" : "Sneakers", "id": "nuevos" 
+        },
+        "etiquetas": [
+            "Jordan",
+            "AIR",
+            "Nike"
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Air Jordan 2 Retro",
+        "precio": 61.000,
+        "color": "Gris/Celeste",
+        "imagen": [
+            "Assent/01a2f6b6-deec-4c12-b6b1-a81db6ab7ee3.webp"
+        ],
+        "talla": [
+            "US 7",
+            "US 8",
+            "US 11"
+        ],
+        "existencias": 7,
+        "categoria": { 
+        "nombre" : "Sneakers", "id": "nuevos" 
+        },
+        "etiquetas": [
+            "Retro",
+            "AIR",
+            "Nike"
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Air Jordan 1 Low SE",
+        "precio": 60.000,
+        "color": "Hueso",
+        "imagen": [
+            "Assent/9057c22b-8f60-4fa5-9418-73a358c47093.webp"
+        ],
+        "talla": [
+            "US 9",
+            "US 10",
+            "US 11"
+        ],
+        "existencias": 20,
+        "categoria": { 
+        "nombre" : "Sneakers", "id": "todos" 
+        },
+        "etiquetas": [
+            "LOW",
+            "AIR",
+            "Nike"
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "Air Jordan 1 Low OG",
+        "precio": 65.000,
+        "color": "Gris/Negro",
+        "imagen": [
+            "Assent/a0d9c64e-7c77-483f-8668-fa2d3e546fda.webp"
+        ],
+        "talla": [
+            "US 7",
+            "US 8",
+            "US 9",
+            "US 10",
+            "US 11"
+        ],
+        "existencias": 17,
+        "categoria": { 
+        "nombre" : "Sneakers", "id": "todos" 
+        },
+        "etiquetas": [
+            "LOW",
+            "AIR",
+            "Nike"
+        ]
+    },
+    {
+        "id": 7,
+        "nombre": "Paris Saint-Germain",
+        "precio": 35.000,
+        "color": "Gris",
+        "imagen": [
+            "Assent/523138-800-800.webp"
+        ],
+        "tallasDisponibles": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "existencias": 30,
+        "categoria": { 
+        "nombre" : "Pantalones", "id": "pantalones" 
+        },
+        "etiquetas": [
+            "Jumpman",
+            "Negro",
+            "Casual"
+        ]
+    },
+    {
+        "id": 8,
+        "nombre": "Jordan (Her)itage",
+        "precio": 25.000,
+        "color": "Negro",
+        "imagen": [
+            "Assent/522928-800-800.webp"
+        ],
+        "tallasDisponibles": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "existencias": 20,
+        "categoria": { 
+        "nombre" : "Pantalones", "id": "pantalones" 
+        },
+        "etiquetas": [
+            "Flight",
+            "Negro",
+            "Deportivo"
+        ]
+    },
+    {
+        "id": 9,
+        "nombre": "Jordan Flight Chicago",
+        "precio": 110,
+        "color": "Azul Marino",
+        "imagen": [
+            "Assent/210426-800-800.webp"
+        ],
+        "tallasDisponibles": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "existencias": 15,
+        "categoria": { 
+        "nombre" : "Pantalones", "id": "pantalones" 
+        },
+        "etiquetas": [
+            "Flight",
+            "Azul",
+            "Invierno"
+        ]
+    }
+]
