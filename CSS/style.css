@@ -112,7 +112,7 @@ aside{
 .botonMenu.active::before{
     content: '';
 }
-.numero{
+.numerito{
     background-color:white;
     color: rgb(211, 30, 30);
     padding: .15rem .25rem;
@@ -177,15 +177,6 @@ main{
 }
 .carritoComprado{
     color: rgb(211, 30, 30) ;
-}
-.disabled {
-    display: none;
-}
-.carritoProductos.disabled {
-    display: none;
-}
-.carritoAcciones.disabled{
-    display: none;
 }
 .carritoProductos{
     display: flex;

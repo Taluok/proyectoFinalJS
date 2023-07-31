@@ -1,19 +1,11 @@
 //SECCION CARRITO
-
-let productosEnCarrito = localStorage.getItem("productos-en-carrito");
-productosEnCarrito = JSON.parse(productosEnCarrito);
-
 const contenedorCarritoVacio = document.querySelector("#carritoVacio");
 const contenedorCarritoProductos = document.querySelector("#carritoProductos");
 const contenedorCarritoAcciones = document.querySelector("#carritoAcciones");
 const contenedorCarritoComprado = document.querySelector("#carritoComprado");
-let botonesEliminar = document.querySelectorAll(".carritoProductoEliminar");
-const botonVaciar = document.querySelector("#botonVaciarCarrito");
-const contenedorTotal = document.querySelector("#total");
-const botonComprar = document.querySelector("#carritoAccionesComprar");
-const botonCarrito = document.querySelector(".botonCarrito");
-const contenedorCarrito = document.querySelector(".carrito");
-const botonVolver = document.querySelector(".botonVolver");
+const contenedorTotal = document.querySelector("#total"); // Agregamos la referencia al elemento del total
+let botonesEliminar;
+let productosEnCarrito = [];
 
 botonCarrito.addEventListener("click", () => {
     contenedorCarrito.classList.toggle("mostrar");
@@ -34,14 +26,13 @@ function cargarProductosCarrito() {
         contenedorCarritoProductos.innerHTML = "";
 
         productosEnCarrito.forEach(producto => {
-
             const div = document.createElement("div");
             div.classList.add("productosCarrito");
             div.innerHTML = `
-                <img class="carritoImagen" src="${producto.imagen[0]}" alt="${producto.titulo}">
+                <img class="carritoImagen" src="${producto.imagen[0]}" alt="${producto.nombre}">
                 <div class="carritoProductoTitulo">
                     <small>Título</small>
-                    <h3>${producto.titulo}</h3>
+                    <h3>${producto.nombre}</h3>
                 </div>
                 <div class="carritoProductoCantidad">
                     <small>Cantidad</small>
@@ -59,7 +50,7 @@ function cargarProductosCarrito() {
             `;
 
             contenedorCarritoProductos.append(div);
-        })
+        });
 
         actualizarBotonesEliminar();
         actualizarTotal();
@@ -84,26 +75,7 @@ function actualizarBotonesEliminar() {
 }
 
 function eliminarDelCarrito(e) {
-    Toastify({
-        text: "Producto eliminado",
-        duration: 3000,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-            background: "linear-gradient(to right, #4b33a8, #785ce9)",
-            borderRadius: "2rem",
-            textTransform: "uppercase",
-            fontSize: ".75rem"
-        },
-        offset: {
-            x: '1.5rem',
-            y: '1.5rem'
-        },
-        onClick: function () { }
-    }).showToast();
-
+    // Código para eliminar del carrito
     const idBoton = e.currentTarget.id;
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
 
@@ -111,17 +83,15 @@ function eliminarDelCarrito(e) {
     cargarProductosCarrito();
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     const botonVaciar = document.querySelector("#carritoAccionesVaciar");
     botonVaciar.addEventListener("click", vaciarCarrito);
-
 });
 
 function vaciarCarrito() {
-
+    // Código para vaciar el carrito
     Swal.fire({
         title: '¿Estás seguro?',
         icon: 'question',
@@ -132,38 +102,29 @@ function vaciarCarrito() {
         cancelButtonText: 'No'
     }).then((result) => {
         if (result.isConfirmed) {
-            productosEnCarrito.length = 0;
+            productosEnCarrito = [];
             localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
             cargarProductosCarrito();
         }
-    })
+    });
 }
-
 
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     contenedorTotal.innerText = `$${totalCalculado.toFixed(2)}`;
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
-    const elemento = document.querySelector("#miElemento");
-    if (elemento) {
-        elemento.addEventListener("click", miFuncion);
-    }
+    const botonComprar = document.querySelector(".carritoAccionesComprar");
+    botonComprar.addEventListener("click", comprarCarrito);
 });
 
 function comprarCarrito() {
-
-    productosEnCarrito.length = 0;
+    productosEnCarrito = [];
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoComprado.classList.remove("disabled");
-
 }
-
-
-

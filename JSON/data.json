@@ -1,7 +1,7 @@
 [
     {
-        "id": 1,
-        "nombre": "Air Jordan 1 Zoom Air CMFT 2",
+        "id": "Sneaker-01",
+        "titulo": "Air Jordan 1 Zoom Air CMFT 2",
         "precio": 63.000,
         "color": "Gris/Blanco",
         "imagen": [
@@ -25,8 +25,8 @@
         ]
     },
     {
-        "id": 2,
-        "nombre": "Tatum 1 Pink Lemonade",
+        "id": "Sneaker-02",
+        "titulo": "Tatum 1 Pink Lemonade",
         "precio": 60.000,
         "color": "Verde/Rosado",
         "imagen": [
@@ -50,8 +50,8 @@
         ]
     },
     {
-        "id": 3,
-        "nombre": "Jordan Why Not .6",
+        "id": "Sneaker-03",
+        "titulo": "Jordan Why Not .6",
         "precio": 83.000,
         "color": "Rojo/Blanco",
         "imagen": [
@@ -74,8 +74,8 @@
         ]
     },
     {
-        "id": 4,
-        "nombre": "Air Jordan 2 Retro",
+        "id": "Sneaker-04",
+        "titulo": "Air Jordan 2 Retro",
         "precio": 61.000,
         "color": "Gris/Celeste",
         "imagen": [
@@ -97,8 +97,8 @@
         ]
     },
     {
-        "id": 5,
-        "nombre": "Air Jordan 1 Low SE",
+        "id": "Sneaker-05",
+        "titulo": "Air Jordan 1 Low SE",
         "precio": 60.000,
         "color": "Hueso",
         "imagen": [
@@ -120,8 +120,8 @@
         ]
     },
     {
-        "id": 6,
-        "nombre": "Air Jordan 1 Low OG",
+        "id": "Sneaker-06",
+        "titulo": "Air Jordan 1 Low OG",
         "precio": 65.000,
         "color": "Gris/Negro",
         "imagen": [
@@ -145,8 +145,8 @@
         ]
     },
     {
-        "id": 7,
-        "nombre": "Paris Saint-Germain",
+        "id": "Pantalon-07",
+        "titulo": "Paris Saint-Germain",
         "precio": 35.000,
         "color": "Gris",
         "imagen": [
@@ -169,8 +169,8 @@
         ]
     },
     {
-        "id": 8,
-        "nombre": "Jordan (Her)itage",
+        "id": "Pantalon-08",
+        "titulo": "Jordan (Her)itage",
         "precio": 25.000,
         "color": "Negro",
         "imagen": [
@@ -193,8 +193,8 @@
         ]
     },
     {
-        "id": 9,
-        "nombre": "Jordan Flight Chicago",
+        "id": "Pantalon-09",
+        "titulo": "Jordan Flight Chicago",
         "precio": 110,
         "color": "Azul Marino",
         "imagen": [
