@@ -11,17 +11,15 @@ const contenedorTotal = document.querySelector("#total");
 const botonComprar = document.querySelector(".carritoAccionesComprar");
 
 function cargarProductosCarrito() {
-    if (productosEnCarrito && productosEnCarrito.length > 0) {
-
+    if (Object.keys(productosEnCarrito).length > 0) {
         contenedorCarritoVacio.classList.add("disabled");
         contenedorCarritoProductos.classList.remove("disabled");
         contenedorCarritoAcciones.classList.remove("disabled");
         contenedorCarritoComprado.classList.add("disabled");
-    
+
         contenedorCarritoProductos.innerHTML = "";
-    
-        productosEnCarrito.forEach(producto => {
-    
+
+        Object.values(productosEnCarrito).forEach(producto => {
             const div = document.createElement("div");
             div.classList.add("carritoProducto");
             div.innerHTML = `
@@ -42,31 +40,29 @@ function cargarProductosCarrito() {
                     <small>Subtotal</small>
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
-                <button class="carritoProductoEliminar" id="${producto.id}"><i class="fa-solid fa-trash"></i></i></button>
+                <button class="carritoProductoEliminar" id="${producto.id}"><i class="fa-solid fa-trash"></i></button>
             `;
-    
+
             contenedorCarritoProductos.append(div);
-        })
-    
-    actualizarBotonesEliminar();
-    actualizarTotal();
-	
+        });
+
+        actualizarTotal();
     } else {
         contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
         contenedorCarritoAcciones.classList.add("disabled");
         contenedorCarritoComprado.classList.add("disabled");
     }
-
 }
+
 
 cargarProductosCarrito();
 
 function actualizarBotonesEliminar() {
-    botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
+    botonesEliminar = document.querySelectorAll(".carritoProductoEliminar");
 
     botonesEliminar.forEach(boton => {
-        boton.addEventListener("click", eliminarDelCarrito);
+        boton.addEventListener("click", () => eliminarDelCarrito(boton.id));
     });
 }
 

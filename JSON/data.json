@@ -4,9 +4,7 @@
         "titulo": "Air Jordan 1 Zoom Air CMFT 2",
         "precio": 63.000,
         "color": "Gris/Blanco",
-        "imagen": [
-            "Assent/04f8fd59-76b9-4dec-bb4a-0762a61d42db.webp"
-        ],
+        "imagen": "./Assent/04f8fd59-76b9-4dec-bb4a-0762a61d42db.webp",
         "talla": [
             "US 7",
             "US 8",
@@ -29,9 +27,8 @@
         "titulo": "Tatum 1 Pink Lemonade",
         "precio": 60.000,
         "color": "Verde/Rosado",
-        "imagen": [
-            "Assent/c48625b1-ba66-44fd-a90e-8f213efc4197.webp"
-        ],
+        "imagen":
+            "./Assent/c48625b1-ba66-44fd-a90e-8f213efc4197.webp",
         "talla": [
             "US 7",
             "US 8",
@@ -54,9 +51,8 @@
         "titulo": "Jordan Why Not .6",
         "precio": 83.000,
         "color": "Rojo/Blanco",
-        "imagen": [
-            "Assent/30e8a9cb-09fd-4b17-9d2a-46c62024cf96.webp"
-        ],
+        "imagen": 
+            "./Assent/30e8a9cb-09fd-4b17-9d2a-46c62024cf96.webp",
         "talla": [
             "US 7",
             "US 9",
@@ -78,9 +74,8 @@
         "titulo": "Air Jordan 2 Retro",
         "precio": 61.000,
         "color": "Gris/Celeste",
-        "imagen": [
-            "Assent/01a2f6b6-deec-4c12-b6b1-a81db6ab7ee3.webp"
-        ],
+        "imagen": 
+            "./Assent/01a2f6b6-deec-4c12-b6b1-a81db6ab7ee3.webp",
         "talla": [
             "US 7",
             "US 8",
@@ -101,9 +96,8 @@
         "titulo": "Air Jordan 1 Low SE",
         "precio": 60.000,
         "color": "Hueso",
-        "imagen": [
-            "Assent/9057c22b-8f60-4fa5-9418-73a358c47093.webp"
-        ],
+        "imagen": 
+            "./Assent/9057c22b-8f60-4fa5-9418-73a358c47093.webp",
         "talla": [
             "US 9",
             "US 10",
@@ -124,9 +118,8 @@
         "titulo": "Air Jordan 1 Low OG",
         "precio": 65.000,
         "color": "Gris/Negro",
-        "imagen": [
-            "Assent/a0d9c64e-7c77-483f-8668-fa2d3e546fda.webp"
-        ],
+        "imagen": 
+            "./Assent/a0d9c64e-7c77-483f-8668-fa2d3e546fda.webp",
         "talla": [
             "US 7",
             "US 8",
@@ -149,9 +142,8 @@
         "titulo": "Paris Saint-Germain",
         "precio": 35.000,
         "color": "Gris",
-        "imagen": [
-            "Assent/523138-800-800.webp"
-        ],
+        "imagen": 
+            "./Assent/523138-800-800.webp",
         "tallasDisponibles": [
             "S",
             "M",
@@ -174,7 +166,7 @@
         "precio": 25.000,
         "color": "Negro",
         "imagen": [
-            "Assent/522928-800-800.webp"
+            "./Assent/522928-800-800.webp"
         ],
         "tallasDisponibles": [
             "S",
@@ -197,9 +189,8 @@
         "titulo": "Jordan Flight Chicago",
         "precio": 110,
         "color": "Azul Marino",
-        "imagen": [
-            "Assent/210426-800-800.webp"
-        ],
+        "imagen": 
+            "./Assent/210426-800-800.webp",
         "tallasDisponibles": [
             "S",
             "M",
