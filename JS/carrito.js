@@ -1,19 +1,14 @@
-//SECCION CARRITO
+let productosEnCarrito = localStorage.getItem("productos-en-carrito");
+productosEnCarrito = JSON.parse(productosEnCarrito);
+
 const contenedorCarritoVacio = document.querySelector("#carritoVacio");
 const contenedorCarritoProductos = document.querySelector("#carritoProductos");
 const contenedorCarritoAcciones = document.querySelector("#carritoAcciones");
 const contenedorCarritoComprado = document.querySelector("#carritoComprado");
-const contenedorTotal = document.querySelector("#total"); // Agregamos la referencia al elemento del total
 let botonesEliminar;
-let productosEnCarrito = [];
-
-botonCarrito.addEventListener("click", () => {
-    contenedorCarrito.classList.toggle("mostrar");
-});
-
-botonVolver.addEventListener("click", () => {
-    contenedorCarrito.classList.remove("mostrar");
-});
+const botonVaciar = document.querySelector("#carritoAccionesVaciar");
+const contenedorTotal = document.querySelector("#total");
+const botonComprar = document.querySelector(".carritoAccionesComprar");
 
 function cargarProductosCarrito() {
     if (productosEnCarrito && productosEnCarrito.length > 0) {
@@ -22,17 +17,18 @@ function cargarProductosCarrito() {
         contenedorCarritoProductos.classList.remove("disabled");
         contenedorCarritoAcciones.classList.remove("disabled");
         contenedorCarritoComprado.classList.add("disabled");
-
+    
         contenedorCarritoProductos.innerHTML = "";
-
+    
         productosEnCarrito.forEach(producto => {
+    
             const div = document.createElement("div");
-            div.classList.add("productosCarrito");
+            div.classList.add("carritoProducto");
             div.innerHTML = `
-                <img class="carritoImagen" src="${producto.imagen[0]}" alt="${producto.nombre}">
+                <img class="carritoImagen" src="${producto.imagen}" alt="${producto.titulo}">
                 <div class="carritoProductoTitulo">
                     <small>Título</small>
-                    <h3>${producto.nombre}</h3>
+                    <h3>${producto.titulo}</h3>
                 </div>
                 <div class="carritoProductoCantidad">
                     <small>Cantidad</small>
@@ -46,15 +42,15 @@ function cargarProductosCarrito() {
                     <small>Subtotal</small>
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
-                <button class="carritoProductoEliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button>
+                <button class="carritoProductoEliminar" id="${producto.id}"><i class="fa-solid fa-trash"></i></i></button>
             `;
-
+    
             contenedorCarritoProductos.append(div);
-        });
-
-        actualizarBotonesEliminar();
-        actualizarTotal();
-
+        })
+    
+    actualizarBotonesEliminar();
+    actualizarTotal();
+	
     } else {
         contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
@@ -67,31 +63,40 @@ function cargarProductosCarrito() {
 cargarProductosCarrito();
 
 function actualizarBotonesEliminar() {
-    botonesEliminar = document.querySelectorAll(".carritoProductoEliminar");
+    botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
 
     botonesEliminar.forEach(boton => {
         boton.addEventListener("click", eliminarDelCarrito);
     });
 }
 
-function eliminarDelCarrito(e) {
-    // Código para eliminar del carrito
-    const idBoton = e.currentTarget.id;
-    const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+function eliminarDelCarrito(productId) {
+    const index = productosEnCarrito.findIndex(producto => producto.id === productId);
 
-    productosEnCarrito.splice(index, 1);
-    cargarProductosCarrito();
+    if (index !== -1) {
+        productosEnCarrito.splice(index, 1);
+        cargarProductosCarrito();
 
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Producto eliminado',
+            text: 'El producto se ha eliminado del carrito.',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            showCloseButton: true
+        });
+    } else {
+        console.error("Producto no encontrado en el carrito.");
+    }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    const botonVaciar = document.querySelector("#carritoAccionesVaciar");
-    botonVaciar.addEventListener("click", vaciarCarrito);
-});
+botonVaciar.addEventListener("click", vaciarCarrito);
 
 function vaciarCarrito() {
-    // Código para vaciar el carrito
     Swal.fire({
         title: '¿Estás seguro?',
         icon: 'question',
@@ -102,7 +107,7 @@ function vaciarCarrito() {
         cancelButtonText: 'No'
     }).then((result) => {
         if (result.isConfirmed) {
-            productosEnCarrito = [];
+            productosEnCarrito.length = 0;
             localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
             cargarProductosCarrito();
         }
@@ -111,20 +116,24 @@ function vaciarCarrito() {
 
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-    contenedorTotal.innerText = `$${totalCalculado.toFixed(2)}`;
+    contenedorTotal.innerText = `$${totalCalculado}`;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const botonComprar = document.querySelector(".carritoAccionesComprar");
-    botonComprar.addEventListener("click", comprarCarrito);
-});
-
+botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
     productosEnCarrito = [];
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
-    contenedorCarritoVacio.classList.add("disabled");
+    contenedorCarritoVacio.classList.remove("disabled");
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoComprado.classList.remove("disabled");
+
+    Swal.fire({
+        icon: 'success',
+        title: '¡Gracias por su compra!',
+        text: 'Esperamos que disfrute de sus productos.',
+        confirmButtonText: 'Aceptar'
+    });
 }
+
