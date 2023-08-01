@@ -11,7 +11,9 @@ const contenedorTotal = document.querySelector("#total");
 const botonComprar = document.querySelector(".carritoAccionesComprar");
 
 function cargarProductosCarrito() {
-    if (Object.keys(productosEnCarrito).length > 0) {
+    if (productosEnCarrito && productosEnCarrito.length > 0) {
+        contenedorCarritoVacio.style.display = "none";
+
         contenedorCarritoVacio.classList.add("disabled");
         contenedorCarritoProductos.classList.remove("disabled");
         contenedorCarritoAcciones.classList.remove("disabled");
@@ -19,9 +21,10 @@ function cargarProductosCarrito() {
 
         contenedorCarritoProductos.innerHTML = "";
 
-        Object.values(productosEnCarrito).forEach(producto => {
+        productosEnCarrito.forEach(producto => {
             const div = document.createElement("div");
             div.classList.add("carritoProducto");
+            console.log(productosEnCarrito);
             div.innerHTML = `
                 <img class="carritoImagen" src="${producto.imagen}" alt="${producto.titulo}">
                 <div class="carritoProductoTitulo">
@@ -40,7 +43,7 @@ function cargarProductosCarrito() {
                     <small>Subtotal</small>
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
-                <button class="carritoProductoEliminar" id="${producto.id}"><i class="fa-solid fa-trash"></i></button>
+                
             `;
 
             contenedorCarritoProductos.append(div);
@@ -54,8 +57,6 @@ function cargarProductosCarrito() {
         contenedorCarritoComprado.classList.add("disabled");
     }
 }
-
-
 cargarProductosCarrito();
 
 function actualizarBotonesEliminar() {

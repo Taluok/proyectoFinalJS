@@ -79,7 +79,7 @@ function actualizarBotonesAgregar() {
 
 }
 //productos que están guardados en el LocalStorage
-let productosEnCarrito;
+let productosEnCarrito; 
 
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
@@ -108,7 +108,8 @@ function agregarAlCarrito(productId) {
     } else {
         productoEnCarrito = {
             id: productoAgregado.id,
-            nombre: productoAgregado.nombre,
+            titulo: productoAgregado.titulo,
+            imagen: productoAgregado.imagen,
             precio: productoAgregado.precio,
             cantidad: 1
         };
