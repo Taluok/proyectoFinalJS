@@ -24,7 +24,6 @@ function cargarProductosCarrito() {
         productosEnCarrito.forEach(producto => {
             const div = document.createElement("div");
             div.classList.add("carritoProducto");
-            console.log(productosEnCarrito);
             div.innerHTML = `
                 <img class="carritoImagen" src="${producto.imagen}" alt="${producto.titulo}">
                 <div class="carritoProductoTitulo">
